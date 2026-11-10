@@ -1,0 +1,96 @@
+/* ===== Characters page ===== */
+.char-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.char-card { text-align: center; }
+
+.avatar {
+  position: relative;
+  overflow: hidden;
+  width: 200px;
+  height: 270px;
+  margin: 0 auto 10px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  background: linear-gradient(135deg, var(--teal), var(--blue));
+}
+.avatar img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.char-card h3 { margin: 6px 0 0; }
+.role {
+  display: inline-block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 2px 12px;
+  border-radius: 20px;
+  margin: 6px 0 12px;
+}
+.role.protagonist { background: var(--teal);  color: var(--navy); }
+.role.supporting  { background: var(--blush); color: var(--mauve); }
+.role.antagonist  { background: var(--mauve); color: var(--cream); }
+
+.char-card p { text-align: left; margin: 0; }
+.char-card ul { text-align: left; color: var(--teal-d); }
+
+.antagonist-card { 
+  border: 2px solid var(--mauve); 
+  grid-column: 1 / -1; 
+}
+.antagonist-card .avatar { background: linear-gradient(135deg, var(--mauve), var(--blush)); }
+.antagonist-card p, .antagonist-card ul { max-width: 700px; margin-left: auto; margin-right: auto; }
+
+/* ===== Crew Avatar Styling ===== */
+.crew-avatar {
+  position: relative;
+  overflow: hidden;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 38px;
+  background: linear-gradient(135deg, var(--teal), var(--blue));
+}
+.crew-avatar img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* ===== Cast & Crew section ===== */
+.crew-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+.crew-card { text-align: center; }
+.crew-card .icon { font-size: 38px; }
+.crew-card h3 { margin: 6px 0 0; color: var(--navy); }
+.crew-card .job { color: var(--mauve); margin: 0 0 8px; font-size: 14px; letter-spacing: 1px; }
+
+
+.facts li { margin-bottom: 6px; }
+.voiced { color: var(--mauve); font-size: 14px; font-style: italic; text-align: center !important; margin-bottom: 8px !important; }
+
+.char-grid.two { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 700px) { .char-grid.two { grid-template-columns: 1fr; } }
